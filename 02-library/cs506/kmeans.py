@@ -67,6 +67,9 @@ def k_means(dataset, k):
     # step 1: generate k points
     # step 2: do converge
     k_points = generate_k(dataset, k)
+    
+
+def _do_lloyds_algo(dataset, k_points):
     assignments = assign_points(dataset, k_points)
     old_assignments = None
     while assignments != old_assignments:
@@ -78,7 +81,18 @@ def k_means(dataset, k):
         clustering[assignment].append(point)
     return clustering
 
+
 def k_mean_pp(data_set, k):
     # step 1: generate k points
     # step 2: do converge
     return 1
+
+
+def k_means(dataset, k):
+    k_points = generate_k(dataset, k)
+    return _do_lloyds_algo(dataset, k_points)
+
+
+def k_means_pp(dataset, k):
+    k_points = generate_k_pp(dataset, k)
+    return _do_lloyds_algo(dataset, k_points)
