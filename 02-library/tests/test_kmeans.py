@@ -1,8 +1,11 @@
 import pytest
 import random
-
+#import sys
+#sys.path.append('/Users/alen/Desktop/CS506/cs506_spring2020/CS506-Spring2020/02-library/cs506')
 from cs506 import kmeans,read
-
+#path = "/Users/alen/Desktop/CS506/cs506_spring2020/CS506-Spring2020/02-library/cs506"
+#from path import kmeans ,read
+#import kmeans, read
 
 def clustered_all_points(clustering, dataset):
     points = []
@@ -85,7 +88,7 @@ def test_kmeans_when_k_is_3(datasetPath, expected1, expected2, expected3):
 
     assert len(clustering.keys()) == 3
     assert clustered_all_points(clustering, dataset) is True
-    
+
     clustered = []
     for assignment in clustering:
         clustered.append(clustering[assignment])
